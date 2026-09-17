@@ -24,6 +24,11 @@ source:
       # which corrupts the output of every app-* tool now that GPy is an extra.
       # Not submitted upstream yet.
       - warn-instead-of-print-when-gp-unavailable.patch
+      # "\[" in GP.py and "\l" in testData.py are invalid escape sequences, which
+      # raise a SyntaxWarning on first import (when the .py files are compiled)
+      # and will become a SyntaxError in a future Python. Still present on
+      # upstream master; not submitted upstream yet.
+      - fix-invalid-escape-sequences.patch
   # neither PDF is in the sdist, so fetch both from the repo at the pinned commit
   - url: https://raw.githubusercontent.com/HEPonHPC/apprentice/e48ab1d512784452560e56f70dfc66dc365e9184/LICENSE_SF-19-096_apprentice_GPL_3.0.pdf
     sha256: 7a331cfb587c14566472bff52add99f57020393df7b9cdca027f948cc7a232e3
