@@ -1,0 +1,26 @@
+diff --git a/apprentice/GP.py b/apprentice/GP.py
+index 40d429a..5a0a6ec 100644
+--- a/apprentice/GP.py
++++ b/apprentice/GP.py
+@@ -1058,7 +1058,7 @@ if __name__ == "__main__":
+                         help="Observable Name\n"
+                         "REQUIRED only build type (\"-b\", \"--buildtype\") is in "+ttttt)
+     parser.add_argument("--keepout", dest="KEEPOUT", type=float, default=20.,
+-                        help="Percentage in \[0,100\] of the data to be left out as test data. \n"
++                        help="Percentage in [0,100] of the data to be left out as test data. \n"
+                              "Train on the (100-keepout) percent data and then test on the rest. \n"
+                              "REQUIRED only build type (\"-b\", \"--buildtype\") is in "+ttttt)
+     parser.add_argument("-o", "--outdir", dest="OUTDIR", type=str, default=None,
+diff --git a/apprentice/testData.py b/apprentice/testData.py
+index ff0db99..f19c1f8 100644
+--- a/apprentice/testData.py
++++ b/apprentice/testData.py
+@@ -262,7 +262,7 @@ def plotRes(X_test, res, order, fn):
+     plt.xlim((-1.5,1.5))
+     plt.title("Absolute error for $f_{}$ with $m={},~n={}$".format(fn,m,n))
+     b=plt.colorbar()
+-    b.set_label("$\log_{10}$ (Resdiual)")
++    b.set_label(r"$\log_{10}$ (Resdiual)")
+     plt.savefig('f{}-residual_{}_{}.jpg'.format(fn,m,n))
+ 
+ if __name__=="__main__":
